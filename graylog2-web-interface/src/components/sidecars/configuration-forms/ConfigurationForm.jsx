@@ -13,6 +13,7 @@ import ColorLabel from 'components/sidecars/common/ColorLabel';
 import CombinedProvider from 'injection/CombinedProvider';
 
 import SourceViewModal from './SourceViewModal';
+import ConfigurationsViewModal from './ConfigurationsViewModal';
 
 const { CollectorsStore, CollectorsActions } = CombinedProvider.get('Collectors');
 const { CollectorConfigurationsActions } = CombinedProvider.get('CollectorConfigurations');
@@ -162,7 +163,11 @@ const ConfigurationForm = createReactClass({
   },
 
   _onShowSource() {
-    this.modal.open();
+    this.previewModal.open();
+  },
+
+  _onShowConfigurations() {
+    this.configurationsModal.open();
   },
 
   _formatCollector(collector) {
@@ -258,6 +263,12 @@ const ConfigurationForm = createReactClass({
                       onClick={this._onShowSource}>
                 Preview
               </Button>
+              <Button className="pull-right"
+                      bsStyle="link"
+                      bsSize="sm"
+                      onClick={this._onShowConfigurations}>
+                Import
+              </Button>
               <HelpBlock>
                 {this.state.errors.template ?
                   this.state.errors.template :
@@ -281,8 +292,9 @@ const ConfigurationForm = createReactClass({
             </Col>
           </Row>
         </form>
-        <SourceViewModal ref={(c) => { this.modal = c; }}
+        <SourceViewModal ref={(c) => { this.previewModal = c; }}
                          templateString={this.state.formData.template} />
+        <ConfigurationsViewModal ref={(c) => { this.configurationsModal = c; }} />
       </div>
     );
   },
