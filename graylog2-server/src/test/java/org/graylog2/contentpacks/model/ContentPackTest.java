@@ -20,6 +20,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.NullNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.github.zafarkhaja.semver.Version;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.io.Resources;
@@ -35,6 +36,7 @@ import org.graylog2.contentpacks.model.parameters.LongParameter;
 import org.graylog2.contentpacks.model.parameters.StringParameter;
 import org.graylog2.jackson.AutoValueSubtypeResolver;
 import org.graylog2.shared.bindings.providers.ObjectMapperProvider;
+import org.joda.time.DateTime;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -74,6 +76,8 @@ public class ContentPackTest {
                 .description("Description")
                 .vendor("Graylog, Inc.")
                 .url(URI.create("https://www.graylog.org"))
+                .createdAt(DateTime.parse("2018-12-17T16:18:12.000Z"))
+                .serverVersion(Version.valueOf("3.0.0-alpha.6-SNAPSHOT"))
                 .requires(ImmutableSet.of(
                         GraylogVersionConstraint.builder().version("^3.0.0").build(),
                         PluginVersionConstraint.builder().pluginId("org.example.TestPlugin").version("^1.2.3").build()))
