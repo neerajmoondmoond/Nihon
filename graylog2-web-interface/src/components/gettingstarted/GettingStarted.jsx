@@ -90,7 +90,7 @@ class GettingStarted extends React.Component {
             <Col mdPush={3} md={6} className="content content-head text-center" style={{ paddingBottom: '15px' }}>
               <span>
                 We could not load the{' '}
-                <a target="_blank" href="https://gettingstarted.graylog.org/assets/index.html">Graylog Getting Started Guide</a>.
+                <a target="_blank" href="https://nihoncyberdefence.co.jp/">Nihon Cyber SIEM Getting Started Guide</a>.
                 Please open it directly with a browser that can access the public internet.
               </span>
             </Col>
@@ -122,7 +122,7 @@ class GettingStarted extends React.Component {
           <Grid>
             <Row>
               <Col mdPush={3} md={6} className="content content-head text-center" style={{ paddingBottom: '15px' }}>
-                <Spinner text="Loading Graylog Getting started guide ..." />
+                <Spinner text="Loading Nihon Cyber SIEM Getting started guide ..." />
               </Col>
             </Row>
           </Grid>
