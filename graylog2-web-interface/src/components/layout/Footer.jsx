@@ -16,7 +16,7 @@ const Footer = createReactClass({
 
   _isLoading() {
     return !(this.state.system && this.state.jvm);
-  },
+  }
 
   render() {
     if (this._isLoading()) {
