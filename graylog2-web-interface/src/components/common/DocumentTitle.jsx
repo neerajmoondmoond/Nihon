@@ -32,7 +32,7 @@ class DocumentTitle extends React.Component {
     document.title = this.defaultTitle;
   }
 
-  defaultTitle = 'NIHON CYBER SIM';
+  defaultTitle = 'NIHON CYBER SIEM';
 
   render() {
     return this.props.children;
