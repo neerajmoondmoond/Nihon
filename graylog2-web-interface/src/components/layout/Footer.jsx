@@ -22,14 +22,14 @@ const Footer = createReactClass({
     if (this._isLoading()) {
       return (
         <div id="footer">
-          NIHON CYBER SIEM
+          NIHON CYBER SIEM {Version.getFullVersion()}
         </div>
       );
     }
 
     return (
       <div id="footer">
-        NIHON CYBER SIEM
+        NIHON CYBER SIEM {this.state.system.version} on {this.state.system.hostname} ({this.state.jvm.info})
       </div>
     );
   },
