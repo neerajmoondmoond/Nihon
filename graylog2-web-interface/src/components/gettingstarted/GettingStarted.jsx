@@ -145,7 +145,7 @@ class GettingStarted extends React.Component {
         <div className="pull-right">{dismissButton}</div>
         {gettingStartedContent}
       </div>
-    );
+    )
   }
 }
 
