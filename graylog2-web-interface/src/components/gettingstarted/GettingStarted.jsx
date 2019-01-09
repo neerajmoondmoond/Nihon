@@ -146,7 +146,7 @@ class GettingStarted extends React.Component {
         {gettingStartedContent}
       </div>
     )
-  }
+  };
 }
 
 export default GettingStarted;
